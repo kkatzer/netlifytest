@@ -30,12 +30,26 @@ export default function Home({allPostsData}) {
                         </li>
                     ))}
                 </ul>
-                <form name="contact" netlify>
+                <form name="contact" action="/success" method="POST" data-netlify="true">
+                    <input type="hidden" name="form-name" value="contact" />
                     <p>
-                        <label>Name <input type="text" name="name" /></label>
+                        <input type="text" name="firstname" id="firstname" />
+                        <label htmlFor="yourname">
+                            Your Name:
+                        </label> <br />
+                        <input type="text" name="name" id="yourname" />
                     </p>
                     <p>
-                        <label>Email <input type="email" name="email" /></label>
+                        <label htmlFor="youremail">
+                            Your Email:
+                        </label> <br />
+                        <input type="email" name="email" id="youremail" />
+                    </p>
+                    <p>
+                        <label htmlFor="yourmessage">
+                            Message:
+                        </label> <br />
+                        <textarea name="message" id="yourmessage"></textarea>
                     </p>
                     <p>
                         <button type="submit">Send</button>
